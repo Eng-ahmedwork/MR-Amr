@@ -316,9 +316,18 @@ body {
     /* Force single column for all grids on mobile */
     .grid-2,
     .grid-3,
-    .grid-4 {
+    .grid-4,
+    .performance-form-grid,
+    .search-filter-grid {
         grid-template-columns: 1fr !important;
         gap: 1rem;
+    }
+
+    .grid-2>div[style*="grid-column"],
+    .grid-3>div[style*="grid-column"],
+    .grid-4>div[style*="grid-column"],
+    .performance-form-grid>div[style*="grid-column"] {
+        grid-column: span 1 !important;
     }
 
     .card {
@@ -362,6 +371,21 @@ body {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
     gap: 2rem;
+}
+
+.performance-form-grid {
+    display: grid;
+    grid-template-columns: 2fr 2fr 1fr 1fr;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.search-filter-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 1.5rem;
+    margin-bottom: 1rem;
+    align-items: flex-end;
 }
 
 /* Form Styles */
@@ -611,6 +635,14 @@ table {
     select {
         padding: 0.75rem;
         font-size: 1rem;
+    }
+
+    .attendance-input-group {
+        flex-direction: column !important;
+    }
+
+    .attendance-input-group button {
+        width: 100%;
     }
 }
 

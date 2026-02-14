@@ -483,7 +483,7 @@ function renderStudentListSection() {
                 </div>
             </div>
             
-            <div style="display: grid; grid-template-columns: 2fr 1fr; gap: 1.5rem; margin-bottom: 1rem; align-items: flex-end;">
+            <div class="search-filter-grid">
                 <div class="form-group" style="margin-bottom: 0;">
                     <label>Search by Name, Code, or Phone</label>
                     <input type="text" id="search-student" oninput="updateStudentFilter()" placeholder="Search..." style="font-size: 1.2rem; padding: 1rem;">
@@ -613,7 +613,7 @@ function renderPerformanceSection() {
                 <p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 1rem;">Record performance for the date selected above.</p>
                 <div style="margin-top: 1rem;">
                     <label style="display: block; margin-bottom: 0.5rem; font-weight: 600;">Student Code or Name</label>
-                    <div style="display: flex; gap: 0.5rem;">
+                    <div class="attendance-input-group" style="display: flex; gap: 0.5rem;">
                         <input type="text" id="attendance-id-input" placeholder="Search..." style="flex: 1;" maxlength="4" pattern="[0-9]*" oninput="updateStudentNamePreview('attendance-id-input', 'attendance-name-preview')">
                         <button onclick="markAttendance()" class="btn btn-primary" style="padding: 0.5rem 1rem;">Mark Present</button>
                     </div>
@@ -625,7 +625,7 @@ function renderPerformanceSection() {
             <!-- Grades Section -->
             <div class="card">
                 <h3><i class="fas fa-star" style="color: #f59e0b; margin-left: 0.5rem;"></i> Add Grades</h3>
-                <div style="display: grid; grid-template-columns: 2fr 2fr 1fr 1fr; gap: 1rem; margin-top: 1rem;">
+                <div class="performance-form-grid">
                     <div class="form-group">
                         <label>Student Code</label>
                         <input type="text" id="grade-student-id" maxlength="4" pattern="[0-9]{3,4}" oninput="updateStudentNamePreview('grade-student-id', 'grade-name-preview')">
