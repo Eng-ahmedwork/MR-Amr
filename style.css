@@ -1,4 +1,5 @@
 :root {
+    color-scheme: light dark;
     --primary-color: #4f46e5;
     --primary-hover: #4338ca;
     --bg-color: #f8fafc;
@@ -11,15 +12,73 @@
     --border-color: #e2e8f0;
     --shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
     --radius: 16px;
+    --scrollbar-track: #f1f5f9;
+    --scrollbar-thumb: #cbd5e1;
+    --scrollbar-thumb-hover: #4f46e5;
 }
 
-[data-theme="dark"] {
+[data-theme="dark"],
+:root[data-theme="dark"],
+html[data-theme="dark"],
+body[data-theme="dark"] {
+    color-scheme: dark;
     --bg-color: #0f172a;
     --card-bg: #1e293b;
     --text-color: #f8fafc;
     --text-muted: #94a3b8;
     --sidebar-bg: #1e293b;
     --border-color: #334155;
+    --scrollbar-track: #0f172a;
+    --scrollbar-thumb: #334155;
+    --scrollbar-thumb-hover: #6366f1;
+}
+
+/* Custom System Scrollbar for HTML, Body, and ALL elements */
+html,
+body {
+    scrollbar-width: thin;
+    scrollbar-color: var(--scrollbar-thumb) var(--scrollbar-track);
+    background-color: var(--bg-color);
+}
+
+* {
+    scrollbar-width: thin;
+    scrollbar-color: var(--scrollbar-thumb) var(--scrollbar-track);
+}
+
+/* Chrome, Edge, Safari, Opera */
+html::-webkit-scrollbar,
+body::-webkit-scrollbar,
+::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+}
+
+html::-webkit-scrollbar-track,
+body::-webkit-scrollbar-track,
+::-webkit-scrollbar-track {
+    background: var(--scrollbar-track);
+}
+
+html::-webkit-scrollbar-thumb,
+body::-webkit-scrollbar-thumb,
+::-webkit-scrollbar-thumb {
+    background: var(--scrollbar-thumb);
+    border-radius: 10px;
+    border: 2px solid var(--scrollbar-track);
+    transition: background 0.2s ease;
+}
+
+html::-webkit-scrollbar-thumb:hover,
+body::-webkit-scrollbar-thumb:hover,
+::-webkit-scrollbar-thumb:hover {
+    background: var(--scrollbar-thumb-hover);
+}
+
+html::-webkit-scrollbar-corner,
+body::-webkit-scrollbar-corner,
+::-webkit-scrollbar-corner {
+    background: var(--scrollbar-track);
 }
 
 * {
@@ -495,6 +554,17 @@ select:focus {
     background: #ef4444;
     color: white;
     box-shadow: 0 4px 12px rgba(239, 68, 68, 0.3);
+}
+
+.btn-clear {
+    background: rgba(168, 85, 247, 0.12);
+    color: #a855f7;
+}
+
+.btn-clear:hover {
+    background: #a855f7;
+    color: white;
+    box-shadow: 0 4px 12px rgba(168, 85, 247, 0.35);
 }
 
 .btn-action:hover {
